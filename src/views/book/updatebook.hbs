@@ -1,0 +1,65 @@
+
+  <body>
+    
+            <div class="container-md">
+              <div class="row" style="margin: 0 auto;">
+                <div class="col-md-2"></div>
+                <div class="col-md-8" style="border: 1px solid #ccc; padding: 40px; border-radius: 5px;">
+                  <h4 class="h4-new">Cập nhật thông tin</h4>
+                <form role="form" action="/dich-vu-sinh-vien/chuyen-nganh-hoc/them-moi" method="post">
+                    <div class="form-group-new " style="margin-bottom: 16px;">
+                      <label class="control-label" style="margin-bottom: 4px; font-size: 16px;" for="student_code">Tiêu đề<span
+                          id="student_code-check"></span></label>
+                      <input name="tieuDe" value="{{datas.tieuDe}}" class="form-control" type="text"
+                        id="student_code" />
+                    </div>
+                    <div class="form-group-new " style="margin-bottom: 16px;">
+                      <label class="control-label" style="margin-bottom: 4px; font-size: 16px;" for="fullname">Diện tích<span id="fullname-check"></span></label>
+                      <input class="form-control" type="text" name="dienTich" value="{{datas.dienTich}}"
+                        id="fullname" />
+                    </div>
+                    <div class="form-group-new " style="margin-bottom: 16px;">
+                      <label class="control-label" style="margin-bottom: 4px; font-size: 16px;" for="current_semester">Gía phòng<span
+                          id="current_semester-check"></span></label>
+                      <input name="giaPhong" value="{{datas.giaPhong}}"  class="form-control" type="text"
+                        id="current_semester" />
+                    </div>
+                    <div class="form-group-new " style="margin-bottom: 16px;">
+                      <label class="control-label" style="margin-bottom: 4px; font-size: 16px;" for="current_course">Mô tả<span
+                          id="current_course-check"></span></label>
+                     <textarea style="height:300px ;" id="moTa" class="form-control" name="linkPage">{{datas.moTa}}</textarea>
+                    </div>
+                    <div class="form-group-new " style="margin-bottom: 16px;">
+                      <label class="control-label" style="margin-bottom: 4px; font-size: 16px;" for="current_major">Hình ảnh<span
+                          id="current_major-check"></span></label>
+                        <input type="file" class="form-control" id="inputAddres5s" name="image">
+                        <img src="{{datas.hinhAnh}}" width="200" height="200">
+                    
+                    </div>
+                    <div class="form-group-new " style="margin-bottom: 16px;">
+                      <label class="control-label" style="margin-bottom: 4px; font-size: 16px;" for="requested_course">Số điện thoại<span
+                          id="requested_course-check"></span></label>
+                      <input  name="sdt" value="{{datas.sdt}}" class="form-control" type="text"
+                        id="requested_course" />
+                    </div>
+                    <div class="form-group-new " style="margin-bottom: 16px;">
+                      <label class="control-label" style="margin-bottom: 4px; font-size: 16px;" for="requested_course">Địa chỉ<span
+                          id="requested_course-check"></span></label>
+                      <input name="diaChi" value="{{datas.diaChi}}" class="form-control" type="text"
+                        id="requested_course" />
+                    </div>
+
+                    <div class="form-group modal-footer">
+                      <a href="/dich-vu-sinh-vien/chuyen-nganh-hoc" style="text-decoration: none; margin-right: 12px;" class="btnThem">Quay lại</a>
+                      <button style="font-size: 16px; padding: 8px 20px;" disabled id="buttonSave" onclick="onSave()" type="button"
+                        class="btn btn-primary">Lưu</button>
+                    </div>
+                  </form>
+                  </div>
+                </div>
+              </div>
+          
+             
+           
+        
+  </body>

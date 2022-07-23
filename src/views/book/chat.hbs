@@ -1,0 +1,31 @@
+<body>
+    <h1>App chat</h1>
+    <ul id="messages"></ul>
+    <form id="chat-form" action=""> 
+        <input type="text" id="chat-mes">
+        <button id="send-chat">Gửi</button>
+    </form>
+</body>
+<script src = "/socket.io/socket.io.js"></script>
+   
+<script>
+      const socket = io();
+      const chatForm=document.querySelector('#chat-form');
+      const chatMes=document.querySelector('#chat-mes');
+      chatForm.addEventListener('submit',(e) =>{
+        e.preventDefault();
+        const message=chatMes.value;
+        socket.emit('chat', {
+          message: message
+        });
+        chatMes.value='';
+      });
+      const messages=document.querySelector('#messages');
+      socket.on('user-chat', (message) => {
+            const lchat=document.createElement('li');
+            lchat.textContent=message.message;
+            console.log("đây"+message.message);
+            messages.appendChild(lchat);
+      });
+
+</script>
