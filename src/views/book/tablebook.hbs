@@ -580,12 +580,7 @@
         </div>
         <!-- content-wrapper ends -->
         <!-- partial:partials/_footer.html -->
-        <footer class="footer">
-          <div class="container-fluid d-flex justify-content-between">
-           
-            <!-- <span class="float-none float-sm-end mt-1 mt-sm-0 text-end"> Free <a href="https://www.bootstrapdash.com/bootstrap-admin-template/" target="_blank">Bootstrap admin template</a> from Bootstrapdash.com</span> -->
-          </div>
-        </footer>
+     
         <!-- partial -->
       </div>
       <!-- main-panel ends -->
@@ -602,6 +597,7 @@
 
     const goDelete = (id) => {
       deleted_id = id;
+      onDelete();
     }
 
     const fetchAPI = async (url, option) => {
@@ -610,14 +606,14 @@
     }
 
     const onDelete = async () => {
-      const url = `http://localhost:3000/san-pham/${deleted_id}/delete`;
+    const url = `/api/nhatros/${deleted_id}/deleteNhaTro`;
       const option = {
         method: 'delete',
         headers: { 'Content-Type': 'application/json' }
       }
       try {
         await fetchAPI(url, option);
-        window.location.href = '/san-pham';
+        window.location.href = 'trangchu';
       } catch (e) { console.log('Delete error: ', e) }
     }
   </script>

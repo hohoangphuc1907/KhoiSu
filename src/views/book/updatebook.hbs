@@ -1,7 +1,328 @@
 
   <body>
-    
-            <div class="container-md">
+     <div class="container-scroller">
+    <nav class="navbar default-layout-navbar col-lg-12 col-12 p-0 fixed-top d-flex flex-row">
+      <div class="text-center navbar-brand-wrapper d-flex align-items-center justify-content-center">
+        <a class="navbar-brand brand-logo" href="index.html"><img src="/images/logo.svg" alt="logo" /></a>
+        <a class="navbar-brand brand-logo-mini" href="index.html"><img src="/images/logo-mini.svg" alt="logo" /></a>
+      </div>
+      <div class="navbar-menu-wrapper d-flex align-items-stretch">
+        <button class="navbar-toggler navbar-toggler align-self-center" type="button" data-toggle="minimize">
+          <span class="mdi mdi-menu"></span>
+        </button>
+        <ul class="navbar-nav navbar-nav-right">
+          <li class="nav-item nav-profile dropdown">
+            <a class="nav-link dropdown-toggle" id="profileDropdown" href="#" data-bs-toggle="dropdown"
+              aria-expanded="false">
+              <div class="nav-profile-img">
+                <img src="/images/faces/face.jpg" alt="image" />
+                <span class="availability-status online"></span>
+              </div>
+              <div class="nav-profile-text">
+                <p class="mb-1 text-black">Nhựt Vỹ</p>
+              </div>
+            </a>
+            <div class="dropdown-menu navbar-dropdown" aria-labelledby="profileDropdown">
+              <a class="dropdown-item" href="#">
+                <i class="mdi mdi-cached me-2 text-success"></i>
+                Activity Log
+              </a>
+              <div class="dropdown-divider"></div>
+              <a class="dropdown-item" href="/auth/logout">
+                <i class="mdi mdi-logout me-2 text-primary"></i>
+                Signout
+              </a>
+            </div>
+          </li>
+          <li class="nav-item d-none d-lg-block full-screen-link">
+            <a class="nav-link">
+              <i class="mdi mdi-fullscreen" id="fullscreen-button"></i>
+            </a>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link count-indicator dropdown-toggle" id="notificationDropdown" href="#"
+              data-bs-toggle="dropdown">
+              <i class="mdi mdi-bell-outline"></i>
+              <span class="count-symbol bg-danger"></span>
+            </a>
+            <div class="dropdown-menu dropdown-menu-right navbar-dropdown preview-list"
+              aria-labelledby="notificationDropdown">
+              <h6 class="p-3 mb-0">Notifications</h6>
+              <div class="dropdown-divider"></div>
+              <a class="dropdown-item preview-item">
+                <div class="preview-thumbnail">
+                  <div class="preview-icon bg-success">
+                    <i class="mdi mdi-calendar"></i>
+                  </div>
+                </div>
+                <div class="preview-item-content d-flex align-items-start flex-column justify-content-center">
+                  <h6 class="preview-subject font-weight-normal mb-1">Event
+                    today</h6>
+                  <p class="text-gray ellipsis mb-0">
+                    Just a reminder that you have an event today
+                  </p>
+                </div>
+              </a>
+              <div class="dropdown-divider"></div>
+              <a class="dropdown-item preview-item">
+                <div class="preview-thumbnail">
+                  <div class="preview-icon bg-warning">
+                    <i class="mdi mdi-settings"></i>
+                  </div>
+                </div>
+                <div class="preview-item-content d-flex align-items-start flex-column justify-content-center">
+                  <h6 class="preview-subject font-weight-normal mb-1">Settings</h6>
+                  <p class="text-gray ellipsis mb-0"> Update dashboard </p>
+                </div>
+              </a>
+              <div class="dropdown-divider"></div>
+              <a class="dropdown-item preview-item">
+                <div class="preview-thumbnail">
+                  <div class="preview-icon bg-info">
+                    <i class="mdi mdi-link-variant"></i>
+                  </div>
+                </div>
+                <div class="preview-item-content d-flex align-items-start flex-column justify-content-center">
+                  <h6 class="preview-subject font-weight-normal mb-1">Launch
+                    Admin</h6>
+                  <p class="text-gray ellipsis mb-0"> New admin wow! </p>
+                </div>
+              </a>
+              <div class="dropdown-divider"></div>
+              <h6 class="p-3 mb-0 text-center">See all notifications</h6>
+            </div>
+          </li>
+        </ul>
+        <button class="navbar-toggler navbar-toggler-right d-lg-none align-self-center" type="button"
+          data-toggle="offcanvas">
+          <span class="mdi mdi-menu"></span>
+        </button>
+      </div>
+    </nav>
+    <!-- partial -->
+    <div class="container-fluid page-body-wrapper">
+      <!-- partial:partials/_sidebar.html -->
+      <nav class="sidebar sidebar-offcanvas" id="sidebar">
+        <ul class="nav">
+          <li class="nav-item nav-profile">
+            <a href="#" class="nav-link">
+              <div class="nav-profile-image">
+                <img src=" /images/faces/face.jpg" alt="profile" />
+                <span class="login-status online"></span>
+                <!--change to offline or busy as needed-->
+              </div>
+              <div class="nav-profile-text d-flex flex-column">
+                <span class="font-weight-bold mb-2">Nhựt Vỹ</span>
+                <span class="text-secondary text-small">Quản lý ứng dụng</span>
+              </div>
+              <i class="mdi mdi-bookmark-check text-success nav-profile-badge"></i>
+            </a>
+          </li>
+          {{!-- <li class="nav-item">
+            <a class="nav-link" href="/">
+              <span class="menu-title">Giới thiệu</span>
+              <i class="mdi mdi-home menu-icon"></i>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/dich-vu-sinh-vien">
+              <span class="menu-title">Dịch vụ sinh viên</span>
+              <i class="mdi mdi-format-list-bulleted menu-icon"></i>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/dao-tao">
+              <span class="menu-title">Đào tạo</span>
+              <i class="mdi mdi-chart-bar menu-icon"></i>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/tai-vu">
+              <span class="menu-title">Tài vụ</span>
+              <i class="mdi mdi-chart-bar menu-icon"></i>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/users">
+              <span class="menu-title">Người dùng</span>
+              <i class="mdi mdi-chart-bar menu-icon"></i>
+            </a>
+          </li> --}}
+          <li class="nav-item">
+              <a class="nav-link" href="/">
+                <span class="menu-title">Giới thiệu</span>
+                <i class="fa-solid fa-house menu-icon"></i>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/cpanel/home/trangchu">
+                <span class="menu-title">Danh sách bảng tin nhà trọ</span>
+                <i class="fa-solid fa-table-list menu-icon"></i>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/cpanel/home/insertMotel">
+                <span class="menu-title">Đăng tin cho thuê trọ</span>
+                <i class="fa-solid fa-graduation-cap menu-icon"></i>
+              </a>
+            </li>
+        </ul>
+      </nav>
+      <!-- partial -->
+      <div class="main-panel">
+        <div class="content-wrapper">
+
+          <!-- <div class="row">
+              <div class="col-md-4 stretch-card grid-margin">
+                <div class="card bg-gradient-danger card-img-holder text-white">
+                  <div class="card-body">
+                    <img src=" /images/dashboard/circle.svg" class="card-img-absolute" alt="circle-image" />
+                    <h4 class="font-weight-normal mb-3">Weekly Sales <i class="mdi mdi-chart-line mdi-24px float-right"></i>
+                    </h4>
+                    <h2 class="mb-5">$ 15,0000</h2>
+                    <h6 class="card-text">Increased by 60%</h6>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-4 stretch-card grid-margin">
+                <div class="card bg-gradient-info card-img-holder text-white">
+                  <div class="card-body">
+                    <img src=" /images/dashboard/circle.svg" class="card-img-absolute" alt="circle-image" />
+                    <h4 class="font-weight-normal mb-3">Weekly Orders <i class="mdi mdi-bookmark-outline mdi-24px float-right"></i>
+                    </h4>
+                    <h2 class="mb-5">45,6334</h2>
+                    <h6 class="card-text">Decreased by 10%</h6>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-4 stretch-card grid-margin">
+                <div class="card bg-gradient-success card-img-holder text-white">
+                  <div class="card-body">
+                    <img src=" /images/dashboard/circle.svg" class="card-img-absolute" alt="circle-image" />
+                    <h4 class="font-weight-normal mb-3">Visitors Online <i class="mdi mdi-diamond mdi-24px float-right"></i>
+                    </h4>
+                    <h2 class="mb-5">95,5741</h2>
+                    <h6 class="card-text">Increased by 5%</h6>
+                  </div>
+                </div>
+              </div>
+            </div> -->
+          <!-- <div class="row">
+              <div class="col-md-7 grid-margin stretch-card">
+                <div class="card">
+                  <div class="card-body">
+                    <div class="clearfix">
+                      <h4 class="card-title float-left">Visit And Sales Statistics</h4>
+                      <div id="visit-sale-chart-legend" class="rounded-legend legend-horizontal legend-top-right float-right"></div>
+                    </div>
+                    <canvas id="visit-sale-chart" class="mt-4"></canvas>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-5 grid-margin stretch-card">
+                <div class="card">
+                  <div class="card-body">
+                    <h4 class="card-title">Traffic Sources</h4>
+                    <canvas id="traffic-chart"></canvas>
+                    <div id="traffic-chart-legend" class="rounded-legend legend-vertical legend-bottom-left pt-4"></div>
+                  </div>
+                </div>
+              </div>
+            </div> -->
+          <!-- <div class="row">
+              <div class="col-12 grid-margin">
+                <div class="card">
+                  <div class="card-body">
+                    <h4 class="card-title">Recent Tickets</h4>
+                    <div class="table-responsive">
+                      <table class="table">
+                        <thead>
+                          <tr>
+                            <th> Assignee </th>
+                            <th> Subject </th>
+                            <th> Status </th>
+                            <th> Last Update </th>
+                            <th> Tracking ID </th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr>
+                            <td>
+                              <img src=" /images/faces/face.jpg" class="me-2" alt="image"> Nhựt Vỹ
+                            </td>
+                            <td> Fund is not recieved </td>
+                            <td>
+                              <label class="badge badge-gradient-success">DONE</label>
+                            </td>
+                            <td> Dec 5, 2017 </td>
+                            <td> WD-12345 </td>
+                          </tr>
+                          <tr>
+                            <td>
+                              <img src=" /images/faces/face2.jpg" class="me-2" alt="image"> Stella Johnson
+                            </td>
+                            <td> High loading time </td>
+                            <td>
+                              <label class="badge badge-gradient-warning">PROGRESS</label>
+                            </td>
+                            <td> Dec 12, 2017 </td>
+                            <td> WD-12346 </td>
+                          </tr>
+                          <tr>
+                            <td>
+                              <img src=" /images/faces/face3.jpg" class="me-2" alt="image"> Marina Michel
+                            </td>
+                            <td> Website down for one week </td>
+                            <td>
+                              <label class="badge badge-gradient-info">ON HOLD</label>
+                            </td>
+                            <td> Dec 16, 2017 </td>
+                            <td> WD-12347 </td>
+                          </tr>
+                          <tr>
+                            <td>
+                              <img src=" /images/faces/face4.jpg" class="me-2" alt="image"> John Doe
+                            </td>
+                            <td> Loosing control on server </td>
+                            <td>
+                              <label class="badge badge-gradient-danger">REJECTED</label>
+                            </td>
+                            <td> Dec 3, 2017 </td>
+                            <td> WD-12348 </td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div> -->
+          <div class="row">
+            <div class="col-12 grid-margin stretch-card">
+              <div class="card">
+                <div class="card-body">
+                  <!-- LOGO HEADER END-->
+                  <section class="menu-section">
+                    <div class="container">
+                      <div class="row">
+                        <div class="col-md-12">
+                          <div class="navbar-collapse collapse ">
+
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </section>
+                  <!-- MENU SECTION END-->
+                  <div>
+                    <div class="container">
+                      
+                      <div class="row">
+                        <div class="col-md-12">
+                          <a class="btnThem" href="/dich-vu-sinh-vien/chuyen-nganh-hoc/them-moi">Thêm mới</a>
+                        </div>
+                      </div>
+                         <div class="container-md">
               <div class="row" style="margin: 0 auto;">
                 <div class="col-md-2"></div>
                 <div class="col-md-8" style="border: 1px solid #ccc; padding: 40px; border-radius: 5px;">
@@ -11,47 +332,48 @@
                       <label class="control-label" style="margin-bottom: 4px; font-size: 16px;" for="student_code">Tiêu đề<span
                           id="student_code-check"></span></label>
                       <input name="tieuDe" value="{{datas.tieuDe}}" class="form-control" type="text"
-                        id="student_code" />
+                        id="tieuDe" />
                     </div>
                     <div class="form-group-new " style="margin-bottom: 16px;">
                       <label class="control-label" style="margin-bottom: 4px; font-size: 16px;" for="fullname">Diện tích<span id="fullname-check"></span></label>
                       <input class="form-control" type="text" name="dienTich" value="{{datas.dienTich}}"
-                        id="fullname" />
+                        id="dienTich" />
                     </div>
                     <div class="form-group-new " style="margin-bottom: 16px;">
-                      <label class="control-label" style="margin-bottom: 4px; font-size: 16px;" for="current_semester">Gía phòng<span
+                      <label class="control-label" style="margin-bottom: 4px; font-size: 16px;" for="current_semester">Giá phòng<span
                           id="current_semester-check"></span></label>
                       <input name="giaPhong" value="{{datas.giaPhong}}"  class="form-control" type="text"
-                        id="current_semester" />
+                        id="giaPhong" />
                     </div>
                     <div class="form-group-new " style="margin-bottom: 16px;">
                       <label class="control-label" style="margin-bottom: 4px; font-size: 16px;" for="current_course">Mô tả<span
                           id="current_course-check"></span></label>
-                     <textarea style="height:300px ;" id="moTa" class="form-control" name="linkPage">{{datas.moTa}}</textarea>
+                     <textarea style="height:300px ;" id="moTa" class="form-control" name="moTa">{{datas.moTa}}</textarea>
                     </div>
                     <div class="form-group-new " style="margin-bottom: 16px;">
                       <label class="control-label" style="margin-bottom: 4px; font-size: 16px;" for="current_major">Hình ảnh<span
                           id="current_major-check"></span></label>
-                        <input type="file" class="form-control" id="inputAddres5s" name="image">
-                        <img src="{{datas.hinhAnh}}" width="200" height="200">
+                         <input onchange="onChangeFile();" name="image" type="file" accept="image/*" class="form-control-file border"
+                            id="image-file" />
+                        <img id="image-view" src="{{datas.hinhAnh}}" width="200" height="200">
                     
                     </div>
                     <div class="form-group-new " style="margin-bottom: 16px;">
                       <label class="control-label" style="margin-bottom: 4px; font-size: 16px;" for="requested_course">Số điện thoại<span
                           id="requested_course-check"></span></label>
                       <input  name="sdt" value="{{datas.sdt}}" class="form-control" type="text"
-                        id="requested_course" />
+                        id="sdt" />
                     </div>
                     <div class="form-group-new " style="margin-bottom: 16px;">
                       <label class="control-label" style="margin-bottom: 4px; font-size: 16px;" for="requested_course">Địa chỉ<span
                           id="requested_course-check"></span></label>
                       <input name="diaChi" value="{{datas.diaChi}}" class="form-control" type="text"
-                        id="requested_course" />
+                        id="diaChi" />
                     </div>
 
                     <div class="form-group modal-footer">
                       <a href="/dich-vu-sinh-vien/chuyen-nganh-hoc" style="text-decoration: none; margin-right: 12px;" class="btnThem">Quay lại</a>
-                      <button style="font-size: 16px; padding: 8px 20px;" disabled id="buttonSave" onclick="onSave()" type="button"
+                      <button style="font-size: 16px; padding: 8px 20px;" id="buttonSave" onclick="onUpdate()" type="button"
                         class="btn btn-primary">Lưu</button>
                     </div>
                   </form>
@@ -59,7 +381,88 @@
                 </div>
               </div>
           
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- content-wrapper ends -->
+        <!-- partial:partials/_footer.html -->
+      
+        <!-- partial -->
+      </div>
+      <!-- main-panel ends -->
+    </div>
+    <!-- page-body-wrapper ends -->
+  </div>
+    
+           
              
            
         
   </body>
+    <script>
+            const tieuDe = document.getElementById('tieuDe');
+            const dienTich = document.getElementById('dienTich');
+            const giaPhong = document.getElementById('giaPhong');
+            const moTa = document.getElementById('moTa');
+            const sdt = document.getElementById('sdt');
+            const diaChi = document.getElementById('diaChi');
+            const buttonSave = document.getElementById('buttonSave');
+    const fetchAPI = async (url, option) => {
+      const res = await fetch(url, option);
+      return res.json();
+    }
+
+    const onUpdate = async () => {
+       const url = `/api/nhatros/updateNhaTro`;
+       const body = {
+                    tieuDe: tieuDe.value,
+                    dienTich: dienTich.value,
+                    giaPhong: giaPhong.value,
+                    moTa: moTa.value,
+                    sdt: sdt.value,
+                    diaChi: diaChi.value,
+                    hinhAnh: linkHinh,
+                }
+      const option = {
+        method: 'post',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(body)
+      }
+      try {
+        await fetchAPI(url, option);
+        window.location.href = '/cpanel/home/trangchu';
+      } catch (e) { console.log('Delete error: ', e) }
+    }
+
+
+    const onChangeFile = async () => {
+       buttonSave.disabled=true;
+        const imagefile = document.getElementById('image-file');
+        let file = imagefile.files[0];
+        const reader = new FileReader();
+        reader.onload = e => {
+            document.getElementById('image-view').src = e.target.result;
+            document.getElementById('image-view').style.display = 'block';
+        }
+        reader.readAsDataURL(file);
+        var fd = new FormData();
+        fd.append("file", file);
+        const url = `/api/media/uploadImage`;
+
+
+        const option = {
+                    method: 'post',
+                    body: fd
+                }
+        try {
+                    const result = await fetchAPI(url, option);
+                    console.log(result.url);
+                    linkHinh=result.url;
+                    buttonSave.disabled=false;
+                    return linkHinh;
+
+                } catch (e) { console.log(e); }   
+    }
+  </script>

@@ -24,8 +24,29 @@ class NhaTroController extends Controller {
     async insertNhaTro(req, res, next) {
         try {
             const {body} = req;
-            console.log(body);
+           
             const response = await this.service.insertNhaTro(body);
+            return res.status(response.statusCode).json(response);
+        } catch (e) {
+            next(e);
+        }
+    }
+    async deletMotel(req, res, next) {
+        try {
+          const { id } = req.params;
+         
+          const response = await nhatroService.deletMotel(id);
+      
+          return res.status(response.statusCode).json(response);
+        } catch (e) {
+          console.log(e);
+        }
+      }
+    async updateNhaTro(req, res, next) {
+        try {
+            const {body} = req;
+           
+            const response = await this.service.updateNhaTro(body);
             return res.status(response.statusCode).json(response);
         } catch (e) {
             next(e);

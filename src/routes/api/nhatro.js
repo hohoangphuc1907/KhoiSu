@@ -7,4 +7,6 @@ router.get('/', (req, res) => {
 });
 router.get('/getAllNhaTro',NhaTroController.getNhaTro);
 router.post('/themNhaTro',NhaTroController.insertNhaTro);
+router.post('/updateNhaTro',NhaTroController.updateNhaTro);
+router.delete('/:id/deleteNhaTro',NhaTroController.deletMotel);
 module.exports = router;

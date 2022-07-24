@@ -39,7 +39,6 @@ class CPanelController {
   async trangchu(req, res, next) {
     try {
       const response = await nhatroService.cpanel_GetAll({limit:1000});
-      console.log(response);
       res.render("book/tablebook", { response:response });
     } catch (e) {
       console.log(e);
@@ -61,7 +60,8 @@ class CPanelController {
       const response = await nhatroService.getDetail(id);
       let motel=response.data;
   
-      res.render("book/updatebook", { datas:motel });
+      res.render("book/updatebook", { datas:motel,
+      _datas: JSON.stringify(motel) });
     } catch (e) {
       console.log(e);
     }

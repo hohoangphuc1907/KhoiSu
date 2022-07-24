@@ -53,10 +53,47 @@ class NhaTroService extends Service{
             throw new Error('Có lỗi, bạn có thể thử lại sau nhen');
         }
     }
+    async deletMotel(id) {
+        try {
+           
+            const item = await this.model.findByIdAndDelete(id);
+            if (!item) {
+                const error = new Error("Không tìm thấy cuốn sách này");
+                error.statusCode = 404;
+                throw error;
+              }
+           
+            return new HttpResponse( item );
+        } catch ( error ) {
+            throw new Error('Có lỗi, bạn có thể thử lại sau nhen');
+        }
+    }
 
     async insertNhaTro(body) {
         try {
             const {tieuDe,dienTich,giaPhong,hinhAnh,moTa ,sdt,diaChi} = body;
+            const data = {
+                tieuDe,
+                dienTich,
+                giaPhong,
+                hinhAnh,
+                moTa ,
+                sdt,
+                diaChi,
+            }
+           
+            const item = await this.model.create( data );
+            return new HttpResponse( item );
+            
+            
+            
+        } catch ( error ) {
+            throw new Error('Có lỗi, bạn có thể thử lại sau nhen');;
+        }
+    }
+    async updateNhaTro(body) {
+        try {
+            const {id,tieuDe,dienTich,giaPhong,hinhAnh,moTa ,sdt,diaChi} = body;
             const data = {
                 tieuDe,
                 dienTich,
