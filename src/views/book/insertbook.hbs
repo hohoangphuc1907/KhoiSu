@@ -399,6 +399,7 @@
     if(linkHinh===""){
       buttonSave.disabled=true;
     }
+    
     const onChangeFile = async () => {
         const imagefile = document.getElementById('image-file');
         let file = imagefile.files[0];
@@ -449,7 +450,7 @@
                 try {
                     console.log(body);
                     const result = await fetchAPI(url, option);
-                    window.location.href = '/home/trangchu';
+                    window.location.href = '/cpanel/home/trangchu';
 
                 } catch (e) { console.log(e); }
           
