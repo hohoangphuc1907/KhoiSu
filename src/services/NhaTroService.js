@@ -58,7 +58,22 @@ class NhaTroService extends Service{
            
             const item = await this.model.findByIdAndDelete(id);
             if (!item) {
-                const error = new Error("Không tìm thấy cuốn sách này");
+                const error = new Error("Không tìm thấy nhà trọ này");
+                error.statusCode = 404;
+                throw error;
+              }
+           
+            return new HttpResponse( item );
+        } catch ( error ) {
+            throw new Error('Có lỗi, bạn có thể thử lại sau nhen');
+        }
+    }
+    async getDetailMotel(id) {
+        try {
+           
+            const item = await this.model.findById(id);
+            if (!item) {
+                const error = new Error("Không tìm thấy nhà trọ này");
                 error.statusCode = 404;
                 throw error;
               }

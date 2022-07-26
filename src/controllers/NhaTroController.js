@@ -42,6 +42,17 @@ class NhaTroController extends Controller {
           console.log(e);
         }
       }
+      async getDetailMotel(req, res, next) {
+        try {
+          const { id } = req.params;
+         
+          const response = await nhatroService.getDetailMotel(id);
+      
+          return res.status(response.statusCode).json(response);
+        } catch (e) {
+          console.log(e);
+        }
+      }
     async updateNhaTro(req, res, next) {
         try {
             const {body} = req;
