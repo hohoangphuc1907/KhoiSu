@@ -14663,3 +14663,8 @@ dl {
 .labelChart{
   font-family: "ubuntu-bold", sans-serif;
 }
+.table th img, .table td img{
+  width: 70px;
+  height: 70px;
+ 
+}

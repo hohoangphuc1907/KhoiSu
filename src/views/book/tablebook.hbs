@@ -340,12 +340,8 @@
                   <!-- MENU SECTION END-->
                   <div>
                     <div class="container">
+                      <a style="font-size:30px;">Danh sách nhà trọ đang cho thuê</a>
                       
-                      <div class="row">
-                        <div class="col-md-12">
-                          <a class="btnThem" href="/dich-vu-sinh-vien/chuyen-nganh-hoc/them-moi">Thêm mới</a>
-                        </div>
-                      </div>
                       {{!-- <div class="row"> --}}
                         {{!-- <div class="col-md-12"> --}}
                           <!-- Advanced Tables -->
@@ -414,7 +410,7 @@
                                   </tbody>
                                 </table> --}}
 
-                                <table  class="table datatable">
+                <table style="margin-top:20px ;" class="table datatable">
                         <thead>
                           <tr>
                             
@@ -424,29 +420,33 @@
                             <th scope="col">Diện tích</th>
                             <th scope="col">Giá phòng</th>
                              <th scope="col">Hình ảnh</th>
-                            <th scope="col">Số đt</th>
+                            <th scope="col">Số điện thoại</th>
                             <th scope="col">Địa chỉ</th>
+                            <th style="padding-left:30px ;" scope="col">Chi tiết</th>
+                            <th style="padding-left:30px ;"scope="col">Xóa</th>
                           </tr>
                         </thead>
                         
                         
-                        <tbody>
+                        <tbody >
                           
                             {{#each response }}
                             <tr>
-                                <td>{{this.tieuDe}}</td>
+                                <td style="padding-top:35px;">{{this.tieuDe}}</td>
                             
                                 {{!-- <td>{{this.account}}</td> --}}
                                 {{!-- <td>{{this.releasedDate}}</td> --}}
-                                <td>{{this.dienTich}}</td>
-                                <td>{{this.giaPhong}}</td>
+                                <td style="padding-top:35px;">{{this.dienTich}}</td>
+                                <td style="padding-top:35px;">{{this.giaPhong}}</td>
                                 <td>
-                                   <img src="{{this.hinhAnh}}" width="100" height="100">
+                                   <img src="{{this.hinhAnh}}" >
                                 </td>                          
-                                <td>{{this.sdt}}</td>
-                                <td>{{this.diaChi}}</td>
+                                <td style="padding-top:35px;">{{this.sdt}}</td>
+                                <td style="padding-top:35px;">{{this.diaChi}}</td>
                                 <td>
                                     <button id="buttonEdit" class="btn btn-link" onclick="edit('{{this._id}}')">Edit</button>
+                                </td>
+                                <td>
                                     <button 
                                     onclick="goDelete('{{this._id}}')"
                                     data-toggle="modal" data-target="#confirmModal"
