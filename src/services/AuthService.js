@@ -18,7 +18,6 @@ class AuthService {
 
         try {
             let account = await this.userService.findByEmail(email);
-            console.log("=====>", account);
             if(!account){
                 const data = {
                     fcmtokens: token_fcm ? [token_fcm] : [],
@@ -44,8 +43,6 @@ class AuthService {
             }
             let cacheUser = await this.userService.findInfoByEmail(email);
             cacheUser = cacheUser.data;
-            console.log("===> cacheUser", cacheUser);
-
             const token = await this.model.generateToken(cacheUser);
             await this.model.create({ token, 'account': new mongoose.mongo.ObjectId(cacheUser._id) });
             const tokenData = await this.model.findOne({ 'token': token });

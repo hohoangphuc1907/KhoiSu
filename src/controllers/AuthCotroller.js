@@ -33,7 +33,6 @@ class AuthCotroller {
                 token_fcm: token_fcm
             }
             const response = await authService.login(body);
-            console.log("body", response);
             await res.status(response.statusCode).json(response);
         }catch(e) {
             console.log('>>>>>>132 login error: ' + e);
@@ -43,10 +42,13 @@ class AuthCotroller {
 
     async checkLogin(req, res, next) {
         try {
-            const token = this.extractToken(req);
-
-            req.account = await this.service.checkLogin(token);
-
+            // const token = this.extractToken(req);
+            const test=req.headers.cookie;
+            const token=test.replace('token=', '');
+            const response = await this.service.checkLogin(token);
+            console.log(response);
+            req.account = response;
+            
             req.authorized = true;
             req.token = token;
             next();
@@ -55,56 +57,6 @@ class AuthCotroller {
         }
     }
 
-    async getAuthor(req, res, next) {
-        try {
-            //console.log("getAuthor" + userService.getAll);
-            const response = await userService.getAll({limit:1000});
-            const data = response.data.filter(x => x.permission === 'author');
-            res.status(response.statusCode).json(data);
-        } catch (e) {
-            // next(e);
-        }
-    }
-    async getTimeRead(req, res, next) {
-        try {
-            const { id } = req.params;
-            const response = await userService.getTimeRead(id);
-            await res.status(response.statusCode).json(response);
-        } catch (e) {
-            // next(e);
-        }
-    }
-
-    async getreadBooks(req, res, next) {
-        try {
-            const { id } = req.params;
-            const response = await userService.getCountreadBook(id);
-            await res.status(response.statusCode).json(response);
-        
-        } catch (errors) {
-            throw errors;
-        }
-    }
-    async getFavoriteBooks(req, res, next) {
-        try {
-            const { id } = req.params;
-            const response = await userService.getFavoriteBooks(id);
-            await res.status(response.statusCode).json(response);
-        
-        } catch (errors) {
-            throw errors;
-        }
-    }
-    async getReadingBooks(req, res, next) {
-        try {
-            const { id } = req.params;
-            const response = await userService.getReadingBooks(id);
-            await res.status(response.statusCode).json(response);
-        
-        } catch (errors) {
-            throw errors;
-        }
-    }
 
     async getPayBook(req, res, next) {
         try {

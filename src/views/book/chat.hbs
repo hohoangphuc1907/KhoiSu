@@ -9,7 +9,7 @@
 <script src = "/socket.io/socket.io.js"></script>
    
 <script>
-      const socket = io();
+      const socket = io("http://localhost:5555");
       const chatForm=document.querySelector('#chat-form');
       const chatMes=document.querySelector('#chat-mes');
       chatForm.addEventListener('submit',(e) =>{

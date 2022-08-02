@@ -38,6 +38,7 @@ class CPanelController {
   }
   async trangchu(req, res, next) {
     try {
+      console.log(req.account);
       const response = await nhatroService.cpanel_GetAll({limit:1000});
       res.render("book/tablebook", { response:response });
     } catch (e) {
@@ -46,7 +47,7 @@ class CPanelController {
   }
   async insertMotel(req, res, next) {
     try {
-   
+      console.log(req.account._id);
       res.render("book/insertbook");
     } catch (e) {
       console.log(e);
@@ -106,7 +107,6 @@ auth(req, res, next) {
               audience: config.GOOGLE_CLIENT_ID,
             });
             const { name, email, picture } = ticket.getPayload();
-            console.log("idToken ", token.id_token);
             const body = {
               email: email,
               //role: config.USER_ROLE.EMPLOYEE,

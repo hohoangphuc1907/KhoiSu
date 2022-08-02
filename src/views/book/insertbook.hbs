@@ -359,6 +359,11 @@
                       <button style="font-size: 16px; padding: 8px 20px;" onclick="onSave()" id="buttonSave" type="button"
                         class="btn btn-primary">Lưu</button>
                     </div>
+                     <div class="form-group modal-footer">
+                      <a href="/dich-vu-sinh-vien/chuyen-nganh-hoc" style="text-decoration: none; margin-right: 12px;" class="btnThem">Quay lại</a>
+                      <button style="font-size: 16px; padding: 8px 20px;" onclick="onPay()" id="buttonSave" type="button"
+                        class="btn btn-primary">Thanh Toán</button>
+                    </div>
                   </form>
                 </div>
                 <div class="col-md-2"></div>
@@ -451,6 +456,25 @@
                     console.log(body);
                     const result = await fetchAPI(url, option);
                     window.location.href = '/cpanel/home/trangchu';
+
+                } catch (e) { console.log(e); }
+          
+    }
+
+      const onPay = async () => {
+                const url = `/api/nhatros/create_payment_url`;
+              
+               
+
+                const option = {
+                    method: 'post',
+                    headers: { 'Content-Type': 'application/json' },
+                   
+                }
+                try {
+                    
+                    const result = await fetchAPI(url, option);
+                  
 
                 } catch (e) { console.log(e); }
           
