@@ -5,7 +5,7 @@ const express = require( 'express' ), router = express.Router();
 
 router.get('/', CPanelController.index )
 router.get('/login', CPanelController.loginAuth )
-router.get('/trangchu',AuthCotroller.checkLogin,CPanelController.trangchu )
+router.get('/trangchu',CPanelController.trangchu )
 router.get('/insertMotel',AuthCotroller.checkLogin, CPanelController.insertMotel )
 router.get('/:id/detailMotel', CPanelController.getDetail )
 router.post( '/auth', CPanelController.auth );
