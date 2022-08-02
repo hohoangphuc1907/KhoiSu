@@ -84,7 +84,7 @@ class NhaTroController extends Controller {
           vnp_Params['vnp_Locale'] = 'vn';
           vnp_Params['vnp_OrderInfo'] = 'Thanh toan tien dang tin';
           vnp_Params['vnp_OrderType'] = 'billpayment';
-          vnp_Params['vnp_ReturnUrl'] = 'http://localhost:5555/cpanel/home/trangchu';
+          vnp_Params['vnp_ReturnUrl'] = 'http://khoisu.herokuapp.com/cpanel/home/trangchu';
           vnp_Params['vnp_TmnCode'] = 'HIJ54KHQ';
           vnp_Params['vnp_TxnRef'] = '5';
           vnp_Params['vnp_Version'] = '2.1.0';
@@ -115,9 +115,9 @@ class NhaTroController extends Controller {
     delete vnp_Params['vnp_SecureHash'];
     delete vnp_Params['vnp_SecureHashType'];
 
-    vnp_Params = sortObject(vnp_Params);
-    var config = require('config');
-    var secretKey = config.get('vnp_HashSecret');
+    vnp_Params = this.sortObject1(vnp_Params);
+    
+    var secretKey = "XONXIGDILZCDNHGZQKIQBOCLTOQISFIT";
     var querystring = require('qs');
     var signData = querystring.stringify(vnp_Params, { encode: false });
     var crypto = require("crypto");     
