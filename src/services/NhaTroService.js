@@ -86,7 +86,7 @@ class NhaTroService extends Service{
 
     async insertNhaTro(body) {
         try {
-            const {tieuDe,dienTich,giaPhong,hinhAnh,moTa ,sdt,diaChi} = body;
+            const {tieuDe,dienTich,giaPhong,hinhAnh,moTa ,sdt,diaChi,user} = body;
             const data = {
                 tieuDe,
                 dienTich,
@@ -95,6 +95,7 @@ class NhaTroService extends Service{
                 moTa ,
                 sdt,
                 diaChi,
+                user,
             }
            
             const item = await this.model.create( data );

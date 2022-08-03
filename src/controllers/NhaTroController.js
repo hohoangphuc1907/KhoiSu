@@ -72,22 +72,28 @@ class NhaTroController extends Controller {
           req.socket.remoteAddress ||
           req.connection.socket.remoteAddress;
          
-          var secretKey = "XONXIGDILZCDNHGZQKIQBOCLTOQISFIT";
+          var secretKey = 'XONXIGDILZCDNHGZQKIQBOCLTOQISFIT';
           var vnpUrl = 'https://sandbox.vnpayment.vn/paymentv2/vpcpay.html';
+          const date = require('date-and-time');
+          var day=new Date();
+          const value = date.format(day,'YYYYMMDDHHmmss');
+
         
+
           var vnp_Params = {};
-          vnp_Params['vnp_Amount'] = 16000 * 100;
-          vnp_Params['vnp_Command'] = 'pay';
-          vnp_Params['vnp_CreateDate'] = 20170829103111;
-          vnp_Params['vnp_CurrCode'] = 'VND';
-          vnp_Params['vnp_IpAddr'] = '13.160.92.202';
-          vnp_Params['vnp_Locale'] = 'vn';
-          vnp_Params['vnp_OrderInfo'] = 'Thanh toan tien dang tin';
-          vnp_Params['vnp_OrderType'] = 'billpayment';
-          vnp_Params['vnp_ReturnUrl'] = 'http://khoisu.herokuapp.com/cpanel/home/trangchu';
-          vnp_Params['vnp_TmnCode'] = 'HIJ54KHQ';
-          vnp_Params['vnp_TxnRef'] = '5';
           vnp_Params['vnp_Version'] = '2.1.0';
+          vnp_Params['vnp_Command'] = 'pay';
+          vnp_Params['vnp_TmnCode'] = 'HIJ54KHQ';
+          vnp_Params['vnp_Locale'] = 'vn';
+          vnp_Params['vnp_CurrCode'] = 'VND';
+          vnp_Params['vnp_TxnRef'] = 'VNPAY123';
+          vnp_Params['vnp_OrderInfo'] = 'Nap 100K cho so dienthoai 0934998386';
+          vnp_Params['vnp_OrderType'] = 'topup';
+          vnp_Params['vnp_Amount'] = 16000 * 100;
+          vnp_Params['vnp_ReturnUrl'] = 'https://khoisu.herokuapp.com/api/nhatros/vnpay_ipn';
+          vnp_Params['vnp_IpAddr'] = ipAddr;
+          vnp_Params['vnp_CreateDate'] = value;
+          vnp_Params['vnp_ExpireDate'] = '20220903172557';
           // vnp_Params['vnp_Merchant'] = '';
   
           // vnp_Params['vnp_BankCode'] = 'NCB';
@@ -97,7 +103,7 @@ class NhaTroController extends Controller {
           var querystring = require('qs');
           var crypto = require("crypto"); 
           var signData = querystring.stringify(vnp_Params, { encode: false });
-          var hmac = crypto.createHmac("SHA256", secretKey);
+          var hmac = crypto.createHmac("sha512", secretKey);
           var signed = hmac.update(new Buffer(signData, 'utf-8')).digest("hex"); 
           vnp_Params['vnp_SecureHash'] = signed;
           vnpUrl += '?' + querystring.stringify(vnp_Params, { encode: false });

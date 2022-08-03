@@ -38,8 +38,7 @@ class CPanelController {
   }
   async trangchu(req, res, next) {
     try {
-      console.log(req.account);
-      const response = await nhatroService.cpanel_GetAll({limit:1000});
+      const response = await nhatroService.cpanel_GetAll({limit:1000, user:req.account._id});
       res.render("book/tablebook", { response:response });
     } catch (e) {
       console.log(e);
@@ -47,8 +46,9 @@ class CPanelController {
   }
   async insertMotel(req, res, next) {
     try {
-      console.log(req.account._id);
-      res.render("book/insertbook");
+     
+      const idAuthor=req.account._id;
+      res.render("book/insertbook",{ idAuthor:JSON.stringify(idAuthor) });
     } catch (e) {
       console.log(e);
     }

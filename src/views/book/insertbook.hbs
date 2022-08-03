@@ -140,29 +140,29 @@
             </a>
           </li>
           <li class="nav-item">
-              <a class="nav-link" href="/">
-                <span class="menu-title">Giới thiệu</span>
-                <i class="fa-solid fa-house menu-icon"></i>
-              </a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="/cpanel/home/trangchu">
-                <span class="menu-title">Danh sách bảng tin nhà trọ</span>
-                <i class="fa-solid fa-table-list menu-icon"></i>
-              </a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="/cpanel/home/insertMotel">
-                <span class="menu-title">Đăng tin cho thuê trọ</span>
-                <i class="fa-solid fa-graduation-cap menu-icon"></i>
-              </a>
-            </li>
+            <a class="nav-link" href="/">
+              <span class="menu-title">Giới thiệu</span>
+              <i class="fa-solid fa-house menu-icon"></i>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/cpanel/home/trangchu">
+              <span class="menu-title">Danh sách bảng tin nhà trọ</span>
+              <i class="fa-solid fa-table-list menu-icon"></i>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/cpanel/home/insertMotel">
+              <span class="menu-title">Đăng tin cho thuê trọ</span>
+              <i class="fa-solid fa-graduation-cap menu-icon"></i>
+            </a>
+          </li>
         </ul>
       </nav>
       <!-- partial -->
       <div class="main-panel">
         <div class="content-wrapper">
-        
+
           <!-- <div class="row">
               <div class="col-md-4 stretch-card grid-margin">
                 <div class="card bg-gradient-danger card-img-holder text-white">
@@ -288,7 +288,7 @@
                 </div>
               </div>
             </div> -->
-               <div class="row">
+          <div class="row">
             <div class="col-12 grid-margin stretch-card">
               <div class="card">
                 <div class="card-body">
@@ -306,73 +306,71 @@
                   </section>
                   <!-- MENU SECTION END-->
                   <div>
-            <div class="container-md">
-              <div class="row" style="margin: 0 auto;">
-                <div class="col-md-2"></div>
-                <div class="col-md-8" style="border: 1px solid #ccc; padding: 40px; border-radius: 5px;">
-                  <h4 class="h4-new">Đăng tin cho thuê nhà trọ</h4>
-                  <form role="form" method="post">
-                    <div class="form-group-new " style="margin-bottom: 16px;">
-                      <label class="control-label" style="margin-bottom: 4px; font-size: 16px;" for="name">Tiêu Đề</label>
-                      <input type="text" class="form-control" id="tieuDe"
-                        name="tieuDe" />
+                    <div class="container-md">
+                      <div class="row" style="margin: 0 auto;">
+                        <div class="col-md-2"></div>
+                        <div class="col-md-8" style="border: 1px solid #ccc; padding: 40px; border-radius: 5px;">
+                          <h4 class="h4-new">Đăng tin cho thuê nhà trọ</h4>
+                          <form role="form" method="post">
+                            <div class="form-group-new" style="margin-bottom: 16px;">
+                              <label class="control-label" style="margin-bottom: 4px; font-size: 16px;" for="name">Tiêu
+                                Đề</label>
+                              <input type="text" class="form-control" id="tieuDe" name="tieuDe" />
+                            </div>
+                            <div class="form-group-new" style="margin-bottom: 16px;">
+                              <label class="control-label" style="margin-bottom: 4px; font-size: 16px;"
+                                for="student_code">Diện tích<span id="student_code-check"></span></label>
+                              <input class="form-control" type="text" name="dienTich" id="dienTich" />
+                            </div>
+                            <div class="form-group-new" style="margin-bottom: 16px;">
+                              <label class="control-label" style="margin-bottom: 4px; font-size: 16px;"
+                                for="current_major">Giá phòng<span id="giaPhongdsasd"></span></label>
+                              <input class="form-control" type="text" name="giaPhong" id="giaPhong" />
+                            </div>
+                            <div class="form-group-new" style="margin-bottom: 16px;">
+                              <label class="control-label">Hình ảnh<span id="locationImage-check"></span></label>
+                              <input onchange="onChangeFile();" name="image" type="file" accept="image/*"
+                                class="form-control-file border" id="image-file" />
+                              <img style="display: none; object-fit:cover;" src="" width="200" height="200"
+                                id="image-view" />
+                            </div>
+                            <div class="form-group-new" style="margin-bottom: 16px;">
+                              <label class="control-label" style="margin-bottom: 4px; font-size: 16px;"
+                                for="requested_course">Mô tả<span id="requested_course-check"></span></label>
+                              <input class="form-control" type="text" name="moTa" id="moTa" />
+                            </div>
+                            <div class="form-group-new" style="margin-bottom: 16px;">
+                              <label class="control-label" style="margin-bottom: 4px; font-size: 16px;"
+                                for="requested_course">Số điện thoại<span id="requested_course-check"></span></label>
+                              <input class="form-control" type="text" name="sdt" id="sdt" />
+                            </div>
+                            <div class="form-group-new" style="margin-bottom: 16px;">
+                              <label class="control-label" style="margin-bottom: 4px; font-size: 16px;"
+                                for="requested_course">Địa chỉ<span id="requested_course-check"></span></label>
+                              <input class="form-control" type="text" name="diaChi" id="diaChi" />
+                            </div>
+                            <div class="form-group modal-footer">
+                              <a href="/dich-vu-sinh-vien/chuyen-nganh-hoc"
+                                style="text-decoration: none; margin-right: 12px;" class="btnThem">Quay lại</a>
+                              <button style="font-size: 16px; padding: 8px 20px;" onclick="onSave()" id="buttonSave"
+                                type="button" class="btn btn-primary">Lưu</button>
+                            </div>
+                            {{!-- <div class="form-group modal-footer">
+                              <a href="/dich-vu-sinh-vien/chuyen-nganh-hoc"
+                                style="text-decoration: none; margin-right: 12px;" class="btnThem">Quay lại</a>
+                              <button style="font-size: 16px; padding: 8px 20px;" onclick="onPay()" id="buttonSave"
+                                type="button" class="btn btn-primary">Thanh Toán</button>
+                            </div> --}}
+                          </form>
+                        </div>
+                        <div class="col-md-2"></div>
+                      </div>
                     </div>
-                    <div class="form-group-new " style="margin-bottom: 16px;">
-                      <label class="control-label" style="margin-bottom: 4px; font-size: 16px;" for="student_code">Diện tích<span
-                          id="student_code-check"></span></label>
-                      <input class="form-control" type="text"
-                        name="dienTich" id="dienTich" />
-                    </div>
-                    <div class="form-group-new " style="margin-bottom: 16px;">
-                      <label class="control-label" style="margin-bottom: 4px; font-size: 16px;" for="current_major">Giá phòng<span
-                          id="giaPhongdsasd"></span></label>
-                      <input class="form-control" type="text"
-                        name="giaPhong" id="giaPhong" />
-                    </div>
-                    <div class="form-group-new " style="margin-bottom: 16px;">
-                     <label class="control-label">Hình ảnh<span
-                                id="locationImage-check"></span></label>
-                        <input onchange="onChangeFile();" name="image" type="file" accept="image/*" class="form-control-file border"
-                            id="image-file" />
-                        <img style="display: none; object-fit:cover;"  src="" width="200" height="200" id="image-view">
-                    </div>
-                    <div class="form-group-new " style="margin-bottom: 16px;">
-                      <label class="control-label" style="margin-bottom: 4px; font-size: 16px;" for="requested_course">Mô tả<span
-                          id="requested_course-check"></span></label>
-                      <input  class="form-control" type="text"
-                        name="moTa" id="moTa" />
-                    </div>
-                    <div class="form-group-new " style="margin-bottom: 16px;">
-                      <label class="control-label" style="margin-bottom: 4px; font-size: 16px;" for="requested_course">Số điện thoại<span
-                          id="requested_course-check"></span></label>
-                      <input  class="form-control" type="text"
-                        name="sdt" id="sdt" />
-                    </div>
-                     <div class="form-group-new " style="margin-bottom: 16px;">
-                      <label class="control-label" style="margin-bottom: 4px; font-size: 16px;" for="requested_course">Địa chỉ<span
-                          id="requested_course-check"></span></label>
-                      <input  class="form-control" type="text"
-                        name="diaChi" id="diaChi" />
-                    </div>
-                    <div class="form-group modal-footer">
-                      <a href="/dich-vu-sinh-vien/chuyen-nganh-hoc" style="text-decoration: none; margin-right: 12px;" class="btnThem">Quay lại</a>
-                      <button style="font-size: 16px; padding: 8px 20px;" onclick="onSave()" id="buttonSave" type="button"
-                        class="btn btn-primary">Lưu</button>
-                    </div>
-                     <div class="form-group modal-footer">
-                      <a href="/dich-vu-sinh-vien/chuyen-nganh-hoc" style="text-decoration: none; margin-right: 12px;" class="btnThem">Quay lại</a>
-                      <button style="font-size: 16px; padding: 8px 20px;" onclick="onPay()" id="buttonSave" type="button"
-                        class="btn btn-primary">Thanh Toán</button>
-                    </div>
-                  </form>
-                </div>
-                <div class="col-md-2"></div>
-              </div>
-            </div>
-          </div>
+                  </div>
+                 
 
                   <!-- CONTENT-WRAPPER SECTION END-->
-                  {{!-- <section class="footer-section">
+                  {{! <section class="footer-section">
                     <div class="container">
                       <div class="row">
                         <div class="col-md-12">
@@ -380,112 +378,96 @@
                         </div>
                       </div>
                     </div>
-                  </section> --}}
+                  </section> }}
                 </div>
               </div>
             </div>
           </div>
-  
-<script>
-            const tieuDe = document.getElementById('tieuDe');
-            const dienTich = document.getElementById('dienTich');
-            const giaPhong = document.getElementById('giaPhong');
-            const moTa = document.getElementById('moTa');
-            const sdt = document.getElementById('sdt');
-            const diaChi = document.getElementById('diaChi');
-          const buttonSave = document.getElementById('buttonSave');
 
+    <script>
+            let idAuthor = {{{ idAuthor }}}
+            const tieuDe = document.getElementById('tieuDe'); 
+            const dienTich = document.getElementById('dienTich'); 
+            const giaPhong =document.getElementById('giaPhong'); 
+            const moTa =document.getElementById('moTa'); 
+            const sdt =document.getElementById('sdt'); 
+            const diaChi =document.getElementById('diaChi'); 
+            const buttonSave =document.getElementById('buttonSave'); 
 
             const fetchAPI = async (url, option) => {
-              const res = await fetch(url, option);
-              return res.json();
-            }
-    let linkHinh="";
-    if(linkHinh===""){
-      buttonSave.disabled=true;
-    }
-    
-    const onChangeFile = async () => {
-        const imagefile = document.getElementById('image-file');
-        let file = imagefile.files[0];
-        const reader = new FileReader();
-        reader.onload = e => {
-            document.getElementById('image-view').src = e.target.result;
-            document.getElementById('image-view').style.display = 'block';
-        }
-        reader.readAsDataURL(file);
-        var fd = new FormData();
-        fd.append("file", file);
-        const url = `/api/media/uploadImage`;
+                const res = await fetch(url, option); 
+                return res.json();
+            } 
+            let linkHinh = ""; 
+            if (linkHinh === "") {
+              buttonSave.disabled = true;
+            } 
+           const onChangeFile = async () => {
+                  const imagefile = document.getElementById('image-file'); 
+                  let file = imagefile.files[0]; 
+                  const reader = new FileReader(); 
+                  reader.onload = e => {
+                       document.getElementById('image-view').src = e.target.result;
+                      document.getElementById('image-view').style.display = 'block';
+                  }
+                  reader.readAsDataURL(file); 
+                  var fd = new FormData();
+                  fd.append("file", file); 
+                  const url = `/api/media/uploadImage`; 
 
+                  const option = { method: 'post', body: fd } 
+                          try {
+                              const result = await fetchAPI(url, option); 
+                              console.log(result.url); 
+                              linkHinh =result.url; 
+                              buttonSave.disabled = false; 
+                              return linkHinh;
+                            } catch (e) { console.log(e); }
+            } 
+            const onSave = async () => {
+                  const url = `/api/nhatros/themNhaTro`; 
+                  const body = {
+                         tieuDe: tieuDe.value,
+                         dienTich: dienTich.value, 
+                         giaPhong: giaPhong.value, 
+                         moTa: moTa.value, 
+                         sdt: sdt.value, 
+                         diaChi: diaChi.value, 
+                         hinhAnh: linkHinh,
+                         user:idAuthor,
+                  } 
+                  const option = {
+                         method: 'post', 
+                         headers: {'Content-Type':'application/json'}, 
+                         body: JSON.stringify(body)
+                  } 
+                   try {
+                        console.log(body); 
+                        const result = await fetchAPI(url, option);
+                        window.location.href = '/cpanel/home/trangchu';
+                       } catch (e) {
+                          console.log(e);
+                       }
+             } 
+            const onPay = async () => {
+                          const url = `/api/nhatros/create_payment_url`; 
+                          const option = {
+                              method: 'post',
+                              headers: { 'Content-Type': 'application/json' }, 
+                            } 
+                            try {
+                              const result = await fetchAPI(url, option);
+                            } catch (e) { 
+                              console.log(e); 
+                            }
+                        }
 
-        const option = {
-                    method: 'post',
-                    body: fd
-                }
-        try {
-                    const result = await fetchAPI(url, option);
-                    console.log(result.url);
-                    linkHinh=result.url;
-                    buttonSave.disabled=false;
-                    return linkHinh;
-
-                } catch (e) { console.log(e); }   
-    }
-
-
-    const onSave = async () => {
-                const url = `/api/nhatros/themNhaTro`;
-                const body = {
-                    tieuDe: tieuDe.value,
-                    dienTich: dienTich.value,
-                    giaPhong: giaPhong.value,
-                    moTa: moTa.value,
-                    sdt: sdt.value,
-                    diaChi: diaChi.value,
-                    hinhAnh: linkHinh,
-                }
-               
-
-                const option = {
-                    method: 'post',
-                    headers: { 'Content-Type': 'application/json' },
-                    body: JSON.stringify(body)
-                }
-                try {
-                    console.log(body);
-                    const result = await fetchAPI(url, option);
-                    window.location.href = '/cpanel/home/trangchu';
-
-                } catch (e) { console.log(e); }
-          
-    }
-
-      const onPay = async () => {
-                const url = `/api/nhatros/create_payment_url`;
-              
-               
-
-                const option = {
-                    method: 'post',
-                    headers: { 'Content-Type': 'application/json' },
-                   
-                }
-                try {
-                    
-                    const result = await fetchAPI(url, option);
-                  
-
-                } catch (e) { console.log(e); }
-          
-    }
-            
-</script>
+          </script>
 
         </div>
         <!-- content-wrapper ends -->
         <!-- partial:partials/_footer.html -->
-       
+
         <!-- partial -->
       </div>
       <!-- main-panel ends -->
