@@ -13876,8 +13876,9 @@ dl {
 
 .auth form .auth-form-btn {
   margin-top: 10px;
+  margin-left: 60px;
   height: 40px;
-  width: 150px;
+  width: 250px;
   font-size: 15px;
   border-radius: 4px;
   line-height: 1.5; }
@@ -14120,7 +14121,7 @@ dl {
         line-height: 2; }
       @media (min-width: 992px) {
         .navbar .navbar-menu-wrapper .navbar-nav.navbar-nav-right {
-          margin-left: 800px; }
+          margin-left: 700px; }
           .rtl .navbar .navbar-menu-wrapper .navbar-nav.navbar-nav-right {
             margin-left: 0;
             margin-right: auto; } }

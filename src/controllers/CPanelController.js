@@ -38,17 +38,23 @@ class CPanelController {
   }
   async trangchu(req, res, next) {
     try {
+      const Name=req.account;
+     
       const response = await nhatroService.cpanel_GetAll({limit:1000, user:req.account._id});
-      res.render("book/tablebook", { response:response });
+      res.render("book/tablebook", { response:response,Name:Name });
     } catch (e) {
       console.log(e);
     }
   }
   async insertMotel(req, res, next) {
     try {
-     
+      let shortlink =req.query.message; 
+      if(shortlink===undefined){
+        shortlink="";
+      }
       const idAuthor=req.account._id;
-      res.render("book/insertbook",{ idAuthor:JSON.stringify(idAuthor) });
+      res.render("book/insertbook",{ idAuthor:JSON.stringify(idAuthor),
+      shortlink:JSON.stringify(shortlink)});
     } catch (e) {
       console.log(e);
     }
@@ -115,7 +121,7 @@ auth(req, res, next) {
               sdt: " ",
             };
             const account = await authService.login(body);
-            // console.log(user)
+           
             res.cookie("token", account.data.token, {
               expires: new Date(Date.now() + config.COOKIE_TOKEN_LIFETIME),
               httpOnly: true,
@@ -129,6 +135,9 @@ auth(req, res, next) {
       next(e);
     }
   }
+
+
+  
 }
 
 module.exports = new CPanelController();

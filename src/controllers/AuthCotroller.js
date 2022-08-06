@@ -42,10 +42,11 @@ class AuthCotroller {
 
     async checkLogin(req, res, next) {
         try {
-            console.log(req.rawHeaders[29]);
+           
             // const token = this.extractToken(req);
-            // const test=req.headers.cookie;
-            const test=req.rawHeaders[29];
+            const test=req.headers.cookie;
+            console.log(test);
+            // const test=req.rawHeaders[29];
             const token=test.replace('token=', '');
             const response = await this.service.checkLogin(token);
            

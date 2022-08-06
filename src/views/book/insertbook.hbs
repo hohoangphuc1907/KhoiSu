@@ -40,7 +40,7 @@
                 <span class="availability-status online"></span>
               </div>
               <div class="nav-profile-text">
-                <p class="mb-1 text-black">Nhựt Vỹ</p>
+                <p class="mb-1 text-black">{{Name.email}}</p>
               </div>
             </a>
             <div class="dropdown-menu navbar-dropdown" aria-labelledby="profileDropdown">
@@ -133,14 +133,14 @@
                 <!--change to offline or busy as needed-->
               </div>
               <div class="nav-profile-text d-flex flex-column">
-                <span class="font-weight-bold mb-2">Nhựt Vỹ</span>
+                <span class="font-weight-bold mb-2">{{Name.email}}</span>
                 <span class="text-secondary text-small">Quản lý ứng dụng</span>
               </div>
               <i class="mdi mdi-bookmark-check text-success nav-profile-badge"></i>
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="/">
+            <a class="nav-link" href="/cpanel/home">
               <span class="menu-title">Giới thiệu</span>
               <i class="fa-solid fa-house menu-icon"></i>
             </a>
@@ -333,6 +333,7 @@
                                 class="form-control-file border" id="image-file" />
                               <img style="display: none; object-fit:cover;" src="" width="200" height="200"
                                 id="image-view" />
+                               <label id="textWAIT" style="font-size: 13px;" class="control-label"></label>
                             </div>
                             <div class="form-group-new" style="margin-bottom: 16px;">
                               <label class="control-label" style="margin-bottom: 4px; font-size: 16px;"
@@ -355,12 +356,15 @@
                               <button style="font-size: 16px; padding: 8px 20px;" onclick="onSave()" id="buttonSave"
                                 type="button" class="btn btn-primary">Lưu</button>
                             </div>
-                            {{!-- <div class="form-group modal-footer">
+                           
+                          </form>
+                          <form action="/api/nhatros/create_payment_url" method="post">
+                            <div class="form-group modal-footer">
                               <a href="/dich-vu-sinh-vien/chuyen-nganh-hoc"
                                 style="text-decoration: none; margin-right: 12px;" class="btnThem">Quay lại</a>
-                              <button style="font-size: 16px; padding: 8px 20px;" onclick="onPay()" id="buttonSave"
-                                type="button" class="btn btn-primary">Thanh Toán</button>
-                            </div> --}}
+                              <button style="font-size: 16px; padding: 8px 20px;" id="buttonSave"
+                                type="submit" class="btn btn-primary">Thanh Toán</button>
+                            </div>
                           </form>
                         </div>
                         <div class="col-md-2"></div>
@@ -385,12 +389,15 @@
           </div>
 
     <script>
+            let shortlink={{{ shortlink }}}
             let idAuthor = {{{ idAuthor }}}
             const tieuDe = document.getElementById('tieuDe'); 
             const dienTich = document.getElementById('dienTich'); 
             const giaPhong =document.getElementById('giaPhong'); 
             const moTa =document.getElementById('moTa'); 
             const sdt =document.getElementById('sdt'); 
+            const textWAIT =document.getElementById('textWAIT'); 
+            
             const diaChi =document.getElementById('diaChi'); 
             const buttonSave =document.getElementById('buttonSave'); 
 
@@ -402,6 +409,13 @@
             if (linkHinh === "") {
               buttonSave.disabled = true;
             } 
+             if (shortlink === "") {
+              buttonSave.disabled = true;
+            }else if(shortlink === "Giao dịch thành công."){
+              buttonSave.disabled = false;
+            }
+
+            
            const onChangeFile = async () => {
                   const imagefile = document.getElementById('image-file'); 
                   let file = imagefile.files[0]; 
@@ -417,10 +431,10 @@
 
                   const option = { method: 'post', body: fd } 
                           try {
-                              const result = await fetchAPI(url, option); 
-                              console.log(result.url); 
+                              textWAIT.innerHTML="Đang tải hình lên...";
+                              const result = await fetchAPI(url, option);                           
                               linkHinh =result.url; 
-                              buttonSave.disabled = false; 
+                              textWAIT.innerHTML="Đã tải xong";
                               return linkHinh;
                             } catch (e) { console.log(e); }
             } 
@@ -442,7 +456,7 @@
                          body: JSON.stringify(body)
                   } 
                    try {
-                        console.log(body); 
+                       
                         const result = await fetchAPI(url, option);
                         window.location.href = '/cpanel/home/trangchu';
                        } catch (e) {

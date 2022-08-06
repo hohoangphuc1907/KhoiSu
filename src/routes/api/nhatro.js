@@ -8,7 +8,7 @@ router.get('/', (req, res) => {
 router.get('/getAllNhaTro',NhaTroController.getNhaTro);
 router.get('/:id/getDetailNhaTro',NhaTroController.getDetailMotel);
 router.post('/themNhaTro',NhaTroController.insertNhaTro);
-router.post('/create_payment_url',NhaTroController.thanhToan);
+router.post('/create_payment_url',NhaTroController.ThanhToanMoMo2);
 router.get('/vnpay_ipn',NhaTroController.getThanhToan);
 router.post('/updateNhaTro',NhaTroController.updateNhaTro);
 router.delete('/:id/deleteNhaTro',NhaTroController.deletMotel);
