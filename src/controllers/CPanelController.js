@@ -76,7 +76,7 @@ class CPanelController {
 
 auth(req, res, next) {
     if (req.cookies && req.cookies.token) {
-      res.redirect('/cpanel/home/login');
+      res.redirect('/cpanel/home/trangchu');
       return;
     }
     const { campus_code } = req.body;
@@ -90,7 +90,7 @@ auth(req, res, next) {
       scope: config.GOOGLE_SCOPE,
       prompt: "consent",
     });
-    res.cookie("campus_code", campus_code);
+    // res.cookie("campus_code", campus_code);
     res.redirect(authLink);
   }
 
@@ -105,7 +105,7 @@ auth(req, res, next) {
         res.redirect("/cpanel/home/login");
       } else {
         oauth2Client.getToken(req.query.code, async function (err, token) {
-          if (err) res.redirect("/");
+          if (err) res.redirect("/cpanel/home/login");
           else {
             //console.log("token id", token.id_token);
             const ticket = await client.verifyIdToken({

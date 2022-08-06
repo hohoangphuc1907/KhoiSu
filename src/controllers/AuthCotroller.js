@@ -46,6 +46,11 @@ class AuthCotroller {
             // const token = this.extractToken(req);
             const test=req.headers.cookie;
             console.log(test);
+            if (test==undefined) {
+                res.redirect('/cpanel/home/trangchu');
+            }
+              
+            
             // const test=req.rawHeaders[29];
             const token=test.replace('token=', '');
             const response = await this.service.checkLogin(token);
