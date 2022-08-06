@@ -76,7 +76,7 @@ class CPanelController {
 
 auth(req, res, next) {
     if (req.cookies && req.cookies.token) {
-      console.log(req.cookies.token);
+      res.redirect('/cpanel/home/login');
       return;
     }
     const { campus_code } = req.body;
@@ -102,7 +102,7 @@ auth(req, res, next) {
         config.GOOGLE_REDIRECT_URL
       );
       if (req.query.error) {
-        res.redirect("/cpanel/home");
+        res.redirect("/cpanel/home/login");
       } else {
         oauth2Client.getToken(req.query.code, async function (err, token) {
           if (err) res.redirect("/");
