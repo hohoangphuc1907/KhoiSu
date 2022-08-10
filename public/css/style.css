@@ -8360,6 +8360,7 @@ textarea.form-control-lg {
   margin-bottom: 0.25rem !important; }
 
 .mb-2 {
+  
   margin-bottom: 0.5rem !important; }
 
 .mb-3, .template-demo .circle-progress-block {
@@ -11548,7 +11549,7 @@ code {
   font-family: "ubuntu-light", sans-serif; }
 
 .font-weight-bold {
-  font-size: 14.5px;
+  font-size: 13px;
   font-family: "ubuntu-bold", sans-serif; }
 
 .font-weight-normal {
@@ -14087,11 +14088,12 @@ dl {
           margin-left: 0; }
       .navbar .navbar-menu-wrapper .navbar-nav .nav-item.nav-profile .nav-link .nav-profile-img {
         position: relative;
+        padding-left: 10px;
         width: 50px;
         height: 50px; }
         .navbar .navbar-menu-wrapper .navbar-nav .nav-item.nav-profile .nav-link .nav-profile-img img {
-          width: 50px;
-          height: 50px;
+          width: 45px;
+          height: 45px;
           border-radius: 100%; }
         .navbar .navbar-menu-wrapper .navbar-nav .nav-item.nav-profile .nav-link .nav-profile-img .availability-status {
           position: absolute;
@@ -14100,7 +14102,7 @@ dl {
           border-radius: 100%;
           border: 2px solid #ffffff;
           bottom: 5px;
-          right: -5px; }
+          right: -7px; }
           .navbar .navbar-menu-wrapper .navbar-nav .nav-item.nav-profile .nav-link .nav-profile-img .availability-status.online {
             background: #1bcfb4; }
           .navbar .navbar-menu-wrapper .navbar-nav .nav-item.nav-profile .nav-link .nav-profile-img .availability-status.offline {
@@ -14381,7 +14383,7 @@ dl {
             border-radius: 100%; }
         .sidebar .nav .nav-item.nav-profile .nav-link .nav-profile-text {
           margin-top: 1rem;
-          margin-left: 1rem; }
+          margin-left: 0.1rem; }
           .rtl .sidebar .nav .nav-item.nav-profile .nav-link .nav-profile-text {
             margin-left: auto;
             margin-right: 1rem; }
@@ -14669,3 +14671,5 @@ dl {
   height: 70px;
  
 }
+
+

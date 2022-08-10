@@ -14,8 +14,11 @@ const authService = new AuthService(
 const request = require("request");
 const { NhaTro } = require("../models/NhaTro");
 const { NhaTroService } = require("../services/NhaTroService");
+const { UserService } = require("../services/UserService");
 const nhatroService = new NhaTroService( new NhaTro().getInstance()
 );
+const userService = new UserService(new User().getInstance());
+
 
 class CPanelController {
   constructor() {
@@ -39,9 +42,11 @@ class CPanelController {
   async trangchu(req, res, next) {
     try {
       const Name=req.account;
+      const idUser=req.account._id;
+      const user=await userService.findInfoById(idUser);
      
       const response = await nhatroService.cpanel_GetAll({limit:1000, user:req.account._id});
-      res.render("book/tablebook", { response:response,Name:Name });
+      res.render("book/tablebook", { response:response,Name:Name,user:user.data });
     } catch (e) {
       console.log(e);
     }
@@ -52,9 +57,12 @@ class CPanelController {
       if(shortlink===undefined){
         shortlink="";
       }
+      const Name=req.account;
+      const idUser=req.account._id;
+      const user=await userService.findInfoById(idUser);
       const idAuthor=req.account._id;
       res.render("book/insertbook",{ idAuthor:JSON.stringify(idAuthor),
-      shortlink:JSON.stringify(shortlink)});
+      shortlink:JSON.stringify(shortlink),Name:Name,user:user.data});
     } catch (e) {
       console.log(e);
     }

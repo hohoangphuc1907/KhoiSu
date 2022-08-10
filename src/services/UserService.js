@@ -36,6 +36,7 @@ class UserService extends Service{
                 error.statusCode = 404;
                 throw error;
             }
+           
             return new HttpResponse( account);
         } catch (errors) {
             throw errors;

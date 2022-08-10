@@ -15,7 +15,7 @@
             <a class="nav-link dropdown-toggle" id="profileDropdown" href="#" data-bs-toggle="dropdown"
               aria-expanded="false">
               <div class="nav-profile-img">
-                <img src="/images/faces/face.jpg" alt="image" />
+                <img src="{{user.hinhAnh}}" alt="image" />
                 <span class="availability-status online"></span>
               </div>
               <div class="nav-profile-text">
@@ -104,18 +104,18 @@
       <!-- partial:partials/_sidebar.html -->
       <nav class="sidebar sidebar-offcanvas" id="sidebar">
         <ul class="nav">
-          <li class="nav-item nav-profile">
+        <li class="nav-item nav-profile">
             <a href="#" class="nav-link">
               <div class="nav-profile-image">
-                <img src=" /images/faces/face.jpg" alt="profile" />
+                <img src="{{user.hinhAnh}}" alt="profile" />
                 <span class="login-status online"></span>
                 <!--change to offline or busy as needed-->
               </div>
               <div class="nav-profile-text d-flex flex-column">
-                <span class="font-weight-bold mb-2">Nhựt Vỹ</span>
+                <span class="font-weight-bold mb-2">{{Name.email}}</span>
                 <span class="text-secondary text-small">Quản lý ứng dụng</span>
               </div>
-              <i class="mdi mdi-bookmark-check text-success nav-profile-badge"></i>
+              
             </a>
           </li>
           {{!-- <li class="nav-item">
