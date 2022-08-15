@@ -51,6 +51,18 @@ class CPanelController {
       console.log(e);
     }
   }
+  async gioithieu(req, res, next) {
+    try {
+      const Name=req.account;
+      const idUser=req.account._id;
+      const user=await userService.findInfoById(idUser);
+     
+      const response = await nhatroService.cpanel_GetAll({limit:1000});
+      res.render("index", { response:response,Name:Name,user:user.data });
+    } catch (e) {
+      console.log(e);
+    }
+  }
   async insertMotel(req, res, next) {
     try {
       let shortlink =req.query.message; 
