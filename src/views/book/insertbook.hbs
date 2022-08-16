@@ -311,6 +311,13 @@
                         <div class="col-md-2"></div>
                         <div class="col-md-8" style="border: 1px solid #ccc; padding: 40px; border-radius: 5px;">
                           <h4 class="h4-new">Đăng tin cho thuê nhà trọ</h4>
+                           <h4 class="h4-new">Vui lòng thanh toán trước khi đăng tin cho thuê nhà trọ</h4>
+                          <form action="/api/nhatros/create_payment_url" method="post">
+                            <div class="form-group modal-footer">
+                              <button style="font-size: 16px; padding: 8px 20px; margin-right:450px;" 
+                                type="submit" class="btn btn-primary">Thanh Toán</button>
+                            </div>
+                          </form>
                           <form role="form" method="post">
                             <div class="form-group-new" style="margin-bottom: 16px;">
                               <label class="control-label" style="margin-bottom: 4px; font-size: 16px;" for="name">Tiêu
@@ -358,14 +365,7 @@
                             </div>
                            
                           </form>
-                          <form action="/api/nhatros/create_payment_url" method="post">
-                            <div class="form-group modal-footer">
-                              <a href="/dich-vu-sinh-vien/chuyen-nganh-hoc"
-                                style="text-decoration: none; margin-right: 12px;" class="btnThem">Quay lại</a>
-                              <button style="font-size: 16px; padding: 8px 20px;" id="buttonSave"
-                                type="submit" class="btn btn-primary">Thanh Toán</button>
-                            </div>
-                          </form>
+                          
                         </div>
                         <div class="col-md-2"></div>
                       </div>
