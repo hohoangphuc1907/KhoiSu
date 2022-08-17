@@ -257,7 +257,7 @@ class NhaTroController extends Controller {
                 var redirectUrl = 'https://khoisu.herokuapp.com/cpanel/home/insertMotel';
                 var ipnUrl = 'https://khoisu.herokuapp.com/cpanel/home/insertMotel';
                 var requestType = "payWithMethod";
-                var amount = '30000';
+                var amount = '27946';
                 var orderId = partnerCode + new Date().getTime();
                 var requestId = orderId;
                 var extraData ='';
