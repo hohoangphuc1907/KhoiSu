@@ -254,8 +254,8 @@ class NhaTroController extends Controller {
                 var secretKey = 'K951B6PE1waDMi640xX08PD3vg6EkVlz';
                 var orderInfo = 'pay with MoMo';
                 var partnerCode = 'MOMO';
-                var redirectUrl = 'https://khoisu.herokuapp.com/cpanel/home/insertMotel';
-                var ipnUrl = 'https://khoisu.herokuapp.com/cpanel/home/insertMotel';
+                var redirectUrl = 'http://khoisu.herokuapp.com/cpanel/home/insertMotel';
+                var ipnUrl = 'http://khoisu.herokuapp.com/cpanel/home/insertMotel';
                 var requestType = "payWithMethod";
                 var amount = '27946';
                 var orderId = partnerCode + new Date().getTime();
