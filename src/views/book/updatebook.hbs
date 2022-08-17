@@ -402,6 +402,7 @@
         
   </body>
     <script>
+        let idUser = {{{ _datas }}};
             const tieuDe = document.getElementById('tieuDe');
             const dienTich = document.getElementById('dienTich');
             const giaPhong = document.getElementById('giaPhong');
@@ -417,6 +418,7 @@
     const onUpdate = async () => {
        const url = `/api/nhatros/updateNhaTro`;
        const body = {
+                    id:idUser._id,
                     tieuDe: tieuDe.value,
                     dienTich: dienTich.value,
                     giaPhong: giaPhong.value,

@@ -83,12 +83,14 @@ class CPanelController {
   async getDetail(req, res, next) {
     try {
       const { id } = req.params;
-     
+      const Name=req.account;
+      const idUser=req.account._id;
+      const user=await userService.findInfoById(idUser);
       const response = await nhatroService.getDetail(id);
       let motel=response.data;
   
       res.render("book/updatebook", { datas:motel,
-      _datas: JSON.stringify(motel) });
+      _datas: JSON.stringify(motel),Name:Name,user:user.data });
     } catch (e) {
       console.log(e);
     }

@@ -110,6 +110,7 @@ class NhaTroService extends Service{
     async updateNhaTro(body) {
         try {
             const {id,tieuDe,dienTich,giaPhong,hinhAnh,moTa ,sdt,diaChi} = body;
+            console.log(id);
             const data = {
                 tieuDe,
                 dienTich,
@@ -120,7 +121,7 @@ class NhaTroService extends Service{
                 diaChi,
             }
            
-            const item = await this.model.create( data );
+            const item = await this.model.findByIdAndUpdate( id,data );
             return new HttpResponse( item );
             
             
